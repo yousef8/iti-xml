@@ -1,75 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Types -->
+    <xs:complexType name="authorType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="gender" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="sectionType">
+        <xs:sequence>
+            <xs:element name="paragraph" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="chapterType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="summary" type="xs:string"/>
+            <xs:element name="section" type="sectionType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="partType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="chapter" type="chapterType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="bookType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="author" type="authorType"/>
+            <xs:element name="preface" type="xs:string"/>
+            <xs:element name="part" type="partType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="isbn" type="xs:integer" use="required"/>
+        <xs:attribute name="category" type="xs:string"/>
+    </xs:complexType>
+
+    <!-- Root Element -->
     <xs:element name="library">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="location" type="xs:string" />
-                <xs:element name="description" type="xs:string" />
-                <xs:element name="librarian" type="xs:string" />
+                <xs:element name="location" type="xs:string"/>
+                <xs:element name="description" type="xs:string"/>
+                <xs:element name="librarian" type="xs:string"/>
                 <xs:element name="books">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="book" maxOccurs="unbounded">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="title" type="xs:string" />
-                                        <xs:element name="author">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                    <xs:extension base="xs:string">
-                                                        <xs:attribute name="gender" />
-                                                    </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                        <xs:element name="preface" type="xs:string" />
-                                        <xs:element name="parts">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="part">
-                                                        <xs:complexType>
-                                                            <xs:sequence>
-                                                                <xs:element name="title"
-                                                                    type="xs:string" />
-                                                                <xs:element name="chapter"
-                                                                    maxOccurs="unbounded">
-                                                                    <xs:complexType>
-                                                                        <xs:sequence>
-                                                                            <xs:element name="title"
-                                                                                type="xs:string" />
-                                                                            <xs:element
-                                                                                name="summary"
-                                                                                type="xs:string" />
-                                                                            <xs:element
-                                                                                name="section"
-                                                                                maxOccurs="unbounded">
-                                                                                <xs:complexType>
-                                                                                    <xs:sequence>
-                                                                                        <xs:element
-                                                                                            name="paragraph"
-                                                                                            maxOccurs="unbounded"
-                                                                                            type="xs:string" />
-                                                                                    </xs:sequence>
-                                                                                </xs:complexType>
-                                                                            </xs:element>
-                                                                        </xs:sequence>
-                                                                    </xs:complexType>
-                                                                </xs:element>
-                                                            </xs:sequence>
-                                                        </xs:complexType>
-                                                    </xs:element>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                    <xs:attribute name="isbn" type="xs:integer" use="required" />
-                                    <xs:attribute name="category" />
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element name="book" type="bookType" maxOccurs="unbounded"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
 </xs:schema>
