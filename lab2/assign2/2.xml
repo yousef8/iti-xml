@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="2.xsd"?>
+<library>
+    <location>
+        53, cairo, egypt
+    </location>
+    <description>
+        Huge library
+    </description>
+    <librarian>
+        Omar
+    </librarian>
+    <books>
+        <book isbn="34309487">
+            <title>it</title>
+            <author>Steven King</author>
+            <preface>Preface</preface>
+            <parts>
+                <part>
+                    <title>part 1</title>
+                    <chapter>
+                        <title>Chapter 1</title>
+                        <summary>
+                            chapter summary
+                        </summary>
+                        <section>
+                            <paragraph>para 1</paragraph>
+                            <paragraph>para 2</paragraph>
+                            <paragraph>para 3</paragraph>
+                        </section>
+                    </chapter>
+                    <chapter>
+                        <title>Chapter 2</title>
+                        <summary>
+                            chapter summary
+                        </summary>
+                        <section>
+                            <paragraph>para 1</paragraph>
+                            <paragraph>para 2</paragraph>
+                            <paragraph>para 3</paragraph>
+                        </section>
+                    </chapter>
+                </part>
+            </parts>
+        </book>
+
+        <book isbn="12343" category="Horror">
+            <title>it</title>
+            <author gender="male">Steven King</author>
+            <preface>Preface</preface>
+            <parts>
+                <part>
+                    <title>part 1</title>
+                    <chapter>
+                        <title>Chapter 1</title>
+                        <summary>
+                            chapter summary
+                        </summary>
+                        <section>
+                            <paragraph>para 1</paragraph>
+                            <paragraph>para 2</paragraph>
+                            <paragraph>para 3</paragraph>
+                        </section>
+                        <section>
+                            <paragraph>para 1</paragraph>
+                            <paragraph>para 2</paragraph>
+                            <paragraph>para 3</paragraph>
+                        </section>
+                    </chapter>
+                    <chapter>
+                        <title>Chapter 2</title>
+                        <summary>
+                            chapter summary
+                        </summary>
+                        <section>
+                            <paragraph>para 1</paragraph>
+                            <paragraph>para 2</paragraph>
+                            <paragraph>para 3</paragraph>
+                        </section>
+                    </chapter>
+                </part>
+            </parts>
+        </book>
+    </books>
+
+</library>
