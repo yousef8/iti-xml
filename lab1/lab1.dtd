@@ -1,0 +1,21 @@
+<!ELEMENT library (location,description,librarian,books)>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT librarian (#PCDATA)>
+<!ELEMENT books (book+)>
+<!ELEMENT book (title,author,preface,parts)>
+<!ATTLIST book isbn CDATA #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT preface (#PCDATA)>
+<!ELEMENT parts (part+)>
+<!ELEMENT part (title,chapter+)>
+<!ELEMENT chapter (title,summary,section+)>
+<!ELEMENT section (paragraph+)>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT summary (#PCDATA)>
+
+<!ATTLIST book category CDATA #IMPLIED>
+<!ATTLIST author gender (male|female) "male">
+
+<!ENTITY secret SYSTEM "secret.ent">
