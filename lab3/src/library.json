@@ -1,0 +1,25 @@
+{
+  "location": "53, cario, egypt",
+  "description": "description",
+  "librarian": "yousef",
+  "books": [
+    {
+      "isbn": "1234",
+      "category": "horror",
+      "title": "it",
+      "author": "steven king",
+      "parts": [
+        {
+          "title": "part 1",
+          "chapters": [
+            {
+              "title": "chapter 1",
+              "summary": " summary",
+              "section": ["para1", "para2", "para3"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
